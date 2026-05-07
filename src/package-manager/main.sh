@@ -13,10 +13,10 @@ exec_apt_like() {
     $command update
 
     if [ "$PACKAGES" != "" ]; then
-    $command --yes --no-install-recommends install $PACKAGES
+        $command --yes --no-install-recommends install $PACKAGES
     fi
     if [ "$UPGRADEPACKAGES" = "true" ]; then
-      $command --yes upgrade  
+        $command --yes upgrade
     fi
     if [ "$DELETECACHE" = "true" ]; then
         $command clean
