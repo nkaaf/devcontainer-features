@@ -6,8 +6,8 @@ set -eu
 . ./common.sh
 
 check "sl installed" package_installed sl
-check "cowsay deleted" package_installed cowsay
-check "Cache deleted" bash -c '! cache_exists'
-check "Upgrades not existing" bash -c '! upgrades_exists'
+check "cowsay installed" package_installed cowsay
+check "Cache deleted" cache_deleted
+check "Upgrades not existing" upgrades_not_existing
 
 reportResults
