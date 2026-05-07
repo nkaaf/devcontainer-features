@@ -1,13 +1,14 @@
 {
     "id": "package-manager",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "name": "Package Manager",
     "description": "Interacting with package managers.",
     "keywords": [
         "package",
         "manager",
         "apt",
-        "apt-get"
+        "apt-get",
+        "tlmgr"
     ],
     "privileged": false,
     "init": false,
@@ -16,7 +17,8 @@
             "type": "string",
             "enum": [
                 "apt",
-                "apt-get"
+                "apt-get",
+                "tlmgr"
             ],
             "default": "apt",
             "description": "Package Manager"
