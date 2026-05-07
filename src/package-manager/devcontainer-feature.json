@@ -1,6 +1,6 @@
 {
     "id": "package-manager",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "name": "Package Manager",
     "description": "Interacting with package managers.",
     "keywords": [
@@ -16,9 +16,10 @@
             "type": "string",
             "enum": [
                 "apt",
-                "apt-get"
+                "apt-get",
+                "system"
             ],
-            "default": "apt",
+            "default": "system",
             "description": "Package Manager"
         },
         "packages":{
