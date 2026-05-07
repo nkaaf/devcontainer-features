@@ -7,7 +7,7 @@ Interacting with package managers.
 
 ```json
 "features": {
-    "ghcr.io/nkaaf/devcontainer-features/package-manager:0": {}
+    "ghcr.io/nkaaf/devcontainer-features/package-manager:1": {}
 }
 ```
 
@@ -15,7 +15,7 @@ Interacting with package managers.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| manager | Package Manager | string | apt |
+| manager | Package Manager | string | system |
 | packages | Space-seperated string of packages to install. Version constraints can be added in a manner that the package manager understands natively. | string | - |
 | deleteCache | If applicable: Delete cached files. | boolean | false |
 | upgradePackages | If applicable: Upgrade installed packages. | boolean | false |
