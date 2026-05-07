@@ -3,9 +3,17 @@ package_installed() {
 }
 
 cache_exists() {
-    [ -n "$(find /var/lib/apt/lists -mindepth 1 -maxdepth 1 -print -quit 2>/dev/null)" ]
+    find /var/lib/apt/lists -mindepth 1 -maxdepth 1 -print -quit 2>/dev/null | read
+}
+
+cache_deleted() {
+    ! cache_exists
 }
 
 upgrades_exists() {
-    apt list --upgradeable 2>/dev/null | grep -q .
+    apt-get -s upgrade 2>&1 | grep -q '^Inst'
+}
+
+upgrades_not_existing() {
+    ! upgrades_exists
 }

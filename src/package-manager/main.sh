@@ -11,12 +11,14 @@ exec_apt_like() {
     fi
 
     $command update
-    $command --yes --no-install-recommends install $PACKAGES
 
-    if [ "$UPGRADEPACKAGES" -eq "true" ]; then
+    if [ "$PACKAGES" != "" ]; then
+    $command --yes --no-install-recommends install $PACKAGES
+    fi
+    if [ "$UPGRADEPACKAGES" = "true" ]; then
       $command --yes upgrade  
     fi
-    if [ "$DELETECACHE" -eq "true" ]; then
+    if [ "$DELETECACHE" = "true" ]; then
         $command clean
         rm -rf /var/lib/apt/lists/*
     fi

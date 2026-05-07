@@ -6,6 +6,6 @@ set -eu
 . ./common.sh
 
 check "Cache deleted" cache_exists
-check "Upgrades not existing" bash -c '! upgrades_exists'
+check "Upgrades not existing" upgrades_not_existing
 
 reportResults

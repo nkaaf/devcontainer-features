@@ -27,7 +27,7 @@
         }
     },
     "test_apt_upgrade_ubuntu": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu20.04",
         "features": {
             "package-manager": {
                 "manager": "apt",
@@ -45,7 +45,7 @@
         }
     },
     "test_apt_multi_upgrade_delete_ubuntu": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu20.04",
         "features": {
             "package-manager": {
                 "manager": "apt",
@@ -83,7 +83,7 @@
         }
     },
     "test_apt_get_upgrade_ubuntu": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu20.04",
         "features": {
             "package-manager": {
                 "manager": "apt-get",
@@ -101,7 +101,7 @@
         }
     },
     "test_apt_get_multi_upgrade_delete_ubuntu": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu20.04",
         "features": {
             "package-manager": {
                 "manager": "apt-get",
@@ -139,7 +139,7 @@
         }
     },
     "test_apt_upgrade_debian": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:debian11",
         "features": {
             "package-manager": {
                 "manager": "apt",
@@ -157,7 +157,7 @@
         }
     },
     "test_apt_multi_upgrade_delete_debian": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:debian11",
         "features": {
             "package-manager": {
                 "manager": "apt",
@@ -195,7 +195,7 @@
         }
     },
     "test_apt_get_upgrade_debian": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:debian11",
         "features": {
             "package-manager": {
                 "manager": "apt-get",
@@ -213,7 +213,7 @@
         }
     },
     "test_apt_get_multi_upgrade_delete_debian": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:debian11",
         "features": {
             "package-manager": {
                 "manager": "apt-get",
