@@ -1,0 +1,83 @@
+{
+    "id": "latex-texlive",
+    "version": "0.1.0",
+    "name": "LaTeX - TeX Live",
+    "description": "Installation of TeX Live.",
+    "keywords": [
+        "latex",
+        "texlive",
+        "tlmgr"
+    ],
+    "privileged": false,
+    "init": false,
+    "options": {
+        "year": {
+            "type": "string",
+            "enum": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+            ],
+            "default": "2026",
+            "description": "TeX Live Live version to install."
+        },
+        "scheme": {
+            "type": "string",
+            "enum": [
+                "basic",
+                "bookpub",
+                "context",
+                "full",
+                "gust",
+                "infraonly",
+                "medium",
+                "minimal",
+                "small",
+                "tetex"
+            ],
+            "default": "minimal",
+            "description": "Scheme to install."
+        },
+        "packages": {
+            "type": "string",
+            "default": "",
+            "description": "Space-seperated string of packages to install."
+        },
+        "installDocumentation": {
+            "type": "boolean",
+            "default": false,
+            "description": "Install documentation."
+        },
+        "installSource": {
+            "type": "boolean",
+            "default": false,
+            "description": "Install sources."
+        }
+    },
+    "dependsOn": {
+        "ghcr.io/nkaaf/devcontainer-features/package-manager:1": {
+            "manager": "system",
+            "packages": "curl perl",
+            "deleteCache": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop",
+                "tecosaur.latex-utilities",
+                "ltex-plus.vscode-ltex-plus",
+                "ExodiusStudios.comment-anchors"
+            ]
+        }
+    }
+}
