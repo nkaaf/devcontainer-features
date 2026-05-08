@@ -12,10 +12,15 @@ if [ "$INSTALLSOURCE" = "false" ]; then
     install_source_arg="-no-src-install"
 fi
 
+repository_arg=""
+if [ "$YEAR" != "$(date +%Y)" ]; then
+    repository_arg="-repository https://texlive.info/historic/systems/texlive/$YEAR/tlnet-final"
+fi
+
 cd /tmp
 curl --location https://texlive.info/historic/systems/texlive/$YEAR/install-tl-unx.tar.gz --output ./install-tl-unx.tar.gz
 tar --extract --file ./install-tl-unx.tar.gz
-perl ./install-tl-*/install-tl -no-interaction -no-persistent-downloads $install_documentation_arg $install_source_arg -scheme "scheme-$SCHEME"
+perl ./install-tl-*/install-tl -no-interaction -no-persistent-downloads $install_documentation_arg $install_source_arg $repository_arg -scheme "scheme-$SCHEME"
 rm --recursive ./install-tl-*
 
 arch=$(uname -m)
