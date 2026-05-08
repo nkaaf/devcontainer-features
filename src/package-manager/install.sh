@@ -7,21 +7,23 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
+if [ "$MANAGER" = "system" ]; then
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
 
-    case "$ID" in
-        ubuntu|debian)
-            MANAGER="apt-get"
-            ;;
-        *)
-            echo "Currently the OS '$ID' is not supported. Please request the feature."
-            exit 1
-            ;;
-    esac
-else
-    echo "Cannot detect OS: /etc/os-release not found. Please request the feature."
-    exit 1
+        case "$ID" in
+            ubuntu|debian)
+                MANAGER="apt-get"
+                ;;
+            *)
+                echo "Currently the OS '$ID' is not supported. Please request the feature."
+                exit 1
+                ;;
+        esac
+    else
+        echo "Cannot detect OS: /etc/os-release not found. Please request the feature."
+        exit 1
+    fi
 fi
 
 if ! command -v "$MANAGER" > /dev/null 2>&1; then
