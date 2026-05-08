@@ -128,5 +128,135 @@
                 "year": "2026"
             }
         }
+    },
+    "test_2025_minimal_package_single": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "minimal",
+                "year": "2025",
+                "packages": "xifthen"
+            }
+        }
+    },
+    "test_2025_minimal_package_multi": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "minimal",
+                "year": "2025",
+                "packages": "xifthen ifmtarg"
+            }
+        }
+    },
+    "test_2025_minimal_doc": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "minimal",
+                "year": "2025",
+                "installDocumentation": true
+            }
+        }
+    },
+    "test_2025_minimal_src": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "minimal",
+                "year": "2025",
+                "installSource": true
+            }
+        }
+    },
+    "test_2025_minimal": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "minimal",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_basic": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "basic",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_bookpub": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "bookpub",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_context": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "context",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_full": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "full",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_gust": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "gust",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_infraonly": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "infraonly",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_medium": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "medium",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_small": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "small",
+                "year": "2025"
+            }
+        }
+    },
+    "test_2025_tetex": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "tetex",
+                "year": "2025"
+            }
+        }
     }
 }
