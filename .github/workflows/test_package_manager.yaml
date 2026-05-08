@@ -2,8 +2,6 @@
 name: "CI - Test Features - Package Manager"
 on:
   push:
-    branches:
-      - main
     paths:
       - "src/package-manager/**"
       - "test/package-manager/**"
