@@ -1,6 +1,6 @@
 {
     "id": "package-manager",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Package Manager",
     "description": "Interacting with package managers.",
     "keywords": [
