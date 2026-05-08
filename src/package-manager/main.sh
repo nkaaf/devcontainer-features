@@ -27,11 +27,9 @@ exec_apt_like() {
 case "$MANAGER" in
     apt)
         exec_apt_like apt
-        break
         ;;
     apt-get)
         exec_apt_like apt-get
-        break
         ;;
     *)
         echo "Unknown package manager: '$MANAGER'"
