@@ -2,36 +2,61 @@
 
 set -eu
 
+year_min() {
+    [ "$YEAR" -ge $1 ]
+}
+
+export_path() {
+    arch=$(uname -m)
+    os_name=$(uname -s | tr '[:upper:]' '[:lower:]')
+    installation_path="/usr/local/texlive/$YEAR/bin/$arch-$os_name"
+
+    for f in "$installation_path"/*; do
+        [ -f "$f" ] || continue
+        name=$(basename "$f")
+        ln -sf "$f" "/usr/local/bin/$name"
+    done
+}
+
+profile=""
+profile_path=./profile-install-tl
+
 install_documentation_arg=""
 if [ "$INSTALLDOCUMENTATION" = "false" ]; then
-    install_documentation_arg="-no-doc-install"
+    if year_min 2023; then
+        install_documentation_arg="-no-doc-install"
+    else
+        profile="tlpdbopt_install_docfiles 0
+$profile"
+    fi
 fi
 
 install_source_arg=""
 if [ "$INSTALLSOURCE" = "false" ]; then
-    install_source_arg="-no-src-install"
+    if year_min 2023; then
+        install_documentation_arg="-no-doc-install"
+    else
+        profile="tlpdbopt_install_srcfiles 0
+$profile"
+    fi
+fi
+
+interaction_arg="-no-gui"
+if year_min 2023; then
+    interaction_arg="-no-interaction"
 fi
 
 repository_arg=""
-if [ "$YEAR" != "$(date +%Y)" ]; then
+if ! year_min "$(date +%Y)"; then
     repository_arg="-repository https://texlive.info/historic/systems/texlive/$YEAR/tlnet-final"
 fi
 
 cd /tmp
 curl --location https://texlive.info/historic/systems/texlive/$YEAR/install-tl-unx.tar.gz --output ./install-tl-unx.tar.gz
 tar --extract --file ./install-tl-unx.tar.gz
-perl ./install-tl-*/install-tl -no-interaction -no-persistent-downloads $install_documentation_arg $install_source_arg $repository_arg -scheme "scheme-$SCHEME"
-rm --recursive ./install-tl-*
-
-arch=$(uname -m)
-os_name=$(uname -s | tr '[:upper:]' '[:lower:]')
-installation_path="/usr/local/texlive/$YEAR/bin/$arch-$os_name"
-
-for f in "$installation_path"/*; do
-    [ -f "$f" ] || continue
-    name=$(basename "$f")
-    ln -sf "$f" "/usr/local/bin/$name"
-done
+echo "$profile" > "$profile_path"
+perl ./install-tl-*/install-tl $interaction_arg -no-persistent-downloads $install_documentation_arg $install_source_arg $repository_arg -profile "$profile_path" -scheme "scheme-$SCHEME"
+rm --recursive "$profile_path" ./install-tl-*
 
 # Everything below is unfortunately not working :(
 #[ -f "/root/.profile" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "/root/.profile"
@@ -50,6 +75,12 @@ done
 #echo "export PATH=\"$installation_path:\$PATH\"" > /etc/profile.d/texlive.sh
 #chmod +x /etc/profile.d/texlive.sh
 
+# Workaround for the failed exporting of the new PATH above
+export_path
+
 if [ "$PACKAGES" != "" ]; then
     tlmgr install $PACKAGES
 fi
+
+# Have to do it twice, so the installed packages can be linked too
+export_path
