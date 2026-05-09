@@ -45,7 +45,7 @@
                 "tetex"
             ],
             "default": "minimal",
-            "description": "Scheme to install."
+            "description": "Scheme to install (bookpub since 2021)."
         },
         "packages": {
             "type": "string",

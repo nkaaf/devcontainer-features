@@ -2,9 +2,7 @@
 
 set -eu
 
-year_min() {
-    [ "$YEAR" -ge $1 ]
-}
+. ./common.sh
 
 export_path() {
     arch=$(uname -m)

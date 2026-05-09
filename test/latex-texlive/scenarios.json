@@ -837,15 +837,6 @@
             }
         }
     },
-    "test_2020_bookpub": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-        "features": {
-            "latex-texlive": {
-                "scheme": "bookpub",
-                "year": "2020"
-            }
-        }
-    },
     "test_2020_context": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
@@ -963,15 +954,6 @@
         "features": {
             "latex-texlive": {
                 "scheme": "basic",
-                "year": "2019"
-            }
-        }
-    },
-    "test_2019_bookpub": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-        "features": {
-            "latex-texlive": {
-                "scheme": "bookpub",
                 "year": "2019"
             }
         }
