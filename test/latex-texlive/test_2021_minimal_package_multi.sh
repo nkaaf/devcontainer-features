@@ -6,7 +6,7 @@ set -eu
 . ./common.sh
 
 check "TeX Live installed" texlive_installed
-check "TeX Live version" texlive_version "2022"
+check "TeX Live version" texlive_version "2021"
 check "TeX Live scheme" tlmgr_package_installed "scheme-minimal"
 check "tlmgr package xifthen installed" tlmgr_package_installed "xifthen"
 check "tlmgr package ifmtarg installed" tlmgr_package_installed "ifmtarg"

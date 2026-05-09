@@ -5,9 +5,8 @@ set -eu
 . ./dev-container-features-test-lib
 . ./common.sh
 
-check "TeX Live installed" texlive_installed
-check "TeX Live version" texlive_version "2020"
-check "TeX Live scheme" tlmgr_package_installed "scheme-full"
+check "TeX Live not installed" texlive_not_installed
+check "TeX Live scheme" tlmgr_package_installed "scheme-infraonly"
 check "Documentation not installed" docfiles_not_installed
 check "Source not installed" srcfiles_not_installed
 
