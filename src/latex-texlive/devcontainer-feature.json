@@ -14,11 +14,6 @@
         "year": {
             "type": "string",
             "enum": [
-                "2015",
-                "2016",
-                "2017",
-                "2018",
-                "2019",
                 "2020",
                 "2021",
                 "2022",
@@ -45,7 +40,7 @@
                 "tetex"
             ],
             "default": "minimal",
-            "description": "Scheme to install."
+            "description": "Scheme to install (bookpub since 2022)."
         },
         "packages": {
             "type": "string",
@@ -66,7 +61,7 @@
     "dependsOn": {
         "ghcr.io/nkaaf/devcontainer-features/package-manager:1": {
             "manager": "system",
-            "packages": "curl perl",
+            "packages": "curl perl tar",
             "deleteCache": true
         }
     },
