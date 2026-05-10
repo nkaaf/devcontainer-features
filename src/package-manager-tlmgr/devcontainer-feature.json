@@ -1,6 +1,6 @@
 {
     "id": "package-manager-tlmgr",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "name": "Package Manager - tlmgr",
     "description": "Interacting with tlmgr, the TeX Live package manager.",
     "keywords": [

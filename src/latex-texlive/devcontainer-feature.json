@@ -1,6 +1,6 @@
 {
     "id": "latex-texlive",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "LaTeX - TeX Live",
     "description": "Installation of TeX Live.",
     "keywords": [
@@ -59,8 +59,7 @@
         }
     },
     "dependsOn": {
-        "ghcr.io/nkaaf/devcontainer-features/package-manager:1": {
-            "manager": "system",
+        "ghcr.io/nkaaf/devcontainer-features/package-manager:2": {
             "packages": "curl perl tar",
             "deleteCache": true
         }

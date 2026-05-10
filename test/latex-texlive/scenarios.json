@@ -1,4 +1,13 @@
 {
+    "test_minimal_executable": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "latex-texlive": {
+                "scheme": "minimal",
+                "packages": "latexmk"
+            }
+        }
+    },
     "test_2026_minimal_package_single": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {

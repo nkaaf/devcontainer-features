@@ -4,18 +4,6 @@ set -eu
 
 . ./common.sh
 
-export_path() {
-    arch=$(uname -m)
-    os_name=$(uname -s | tr '[:upper:]' '[:lower:]')
-    installation_path="/usr/local/texlive/$YEAR/bin/$arch-$os_name"
-
-    for f in "$installation_path"/*; do
-        [ -f "$f" ] || continue
-        name=$(basename "$f")
-        ln -sf "$f" "/usr/local/bin/$name"
-    done
-}
-
 profile=""
 profile_path=./profile-install-tl
 
@@ -32,7 +20,7 @@ fi
 install_source_arg=""
 if [ "$INSTALLSOURCE" = "false" ]; then
     if year_min 2023; then
-        install_documentation_arg="-no-doc-install"
+        install_source_arg="-no-src-install"
     else
         profile="tlpdbopt_install_srcfiles 0
 $profile"
@@ -56,29 +44,16 @@ echo "$profile" > "$profile_path"
 perl ./install-tl-*/install-tl $interaction_arg -no-persistent-downloads $install_documentation_arg $install_source_arg $repository_arg -profile "$profile_path" -scheme "scheme-$SCHEME"
 rm --recursive "$profile_path" ./install-tl-*
 
-# Everything below is unfortunately not working :(
-#[ -f "/root/.profile" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "/root/.profile"
-#[ -f "/root/.bashrc" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "/root/.bashrc"
-#[ -f "/root/.zshrc" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "/root/.zshrc"
-#[ -f "/root/.oh-my-zsh" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "/root/.oh-my-zsh"
-#[ -f "/root/.zprofile" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "/root/.zprofile"
-#[ -f "$_REMOTE_USER_HOME/.profile" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "$_REMOTE_USER_HOME/.profile"
-#[ -f "$_REMOTE_USER_HOME/.bashrc" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "$_REMOTE_USER_HOME/.bashrc"
-#[ -f "$_REMOTE_USER_HOME/.zshrc" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "$_REMOTE_USER_HOME/.zshrc"
-#[ -f "$_REMOTE_USER_HOME/.oh-my-zsh" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "$_REMOTE_USER_HOME/.oh-my-zsh"
-#[ -f "$_REMOTE_USER_HOME/.zprofile" ] && echo "export PATH=\"$installation_path:\$PATH\"" >> "$_REMOTE_USER_HOME/.zprofile"
-#echo "export PATH=\"$installation_path:\$PATH\"" >> /etc/bash.bashrc
-#echo "export PATH=\"$installation_path:\$PATH\"" >> /etc/zsh/zshrc
-#echo "export PATH=\"$installation_path:\$PATH\"" >> /etc/profile
-#echo "export PATH=\"$installation_path:\$PATH\"" > /etc/profile.d/texlive.sh
-#chmod +x /etc/profile.d/texlive.sh
-
-# Workaround for the failed exporting of the new PATH above
-export_path
+arch=$(uname -m)
+os_name=$(uname -s | tr '[:upper:]' '[:lower:]')
+installation_path="/usr/local/texlive/$YEAR/bin/$arch-$os_name"
+for f in "$installation_path"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    ln --symbolic --force "$f" "/usr/local/bin/$name"
+done
 
 if [ "$PACKAGES" != "" ]; then
     tlmgr install $PACKAGES
+    tlmgr path add
 fi
-
-# Have to do it twice, so the installed packages can be linked too
-export_path

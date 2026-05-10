@@ -16,12 +16,7 @@ if [ "$PACKAGES" != "" ]; then
         fi
     done
 
-    installation_path=$(dirname $(readlink $(which tlmgr)))
-    for f in "$installation_path"/*; do
-        [ -f "$f" ] || continue
-        name=$(basename "$f")
-        ln -sf "$f" "/usr/local/bin/$name"
-    done
+    tlmgr path add
 fi
 if [ "$UPGRADEPACKAGES" = "true" ]; then
     tlmgr update --self --all
