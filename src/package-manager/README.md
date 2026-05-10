@@ -1,13 +1,13 @@
 
 # Package Manager (package-manager)
 
-Interacting with package managers.
+Interacting with system package managers.
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/nkaaf/devcontainer-features/package-manager:1": {}
+    "ghcr.io/nkaaf/devcontainer-features/package-manager:2": {}
 }
 ```
 
@@ -15,7 +15,6 @@ Interacting with package managers.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| manager | Package Manager | string | system |
 | packages | Space-seperated string of packages to install. Version constraints can be added in a manner that the package manager understands natively. | string | - |
 | deleteCache | If applicable: Delete cached files. | boolean | false |
 | upgradePackages | If applicable: Upgrade installed packages. | boolean | false |
