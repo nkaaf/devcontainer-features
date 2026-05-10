@@ -39,11 +39,9 @@ exec_tlmgr() {
 case "$MANAGER" in
     apt)
         exec_apt_like apt
-        break
         ;;
     apt-get)
         exec_apt_like apt-get
-        break
         ;;
     tlmgr)
         exec_tlmgr

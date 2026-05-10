@@ -1,4 +1,13 @@
 {
+    "test_system_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager": {
+                "manager": "system",
+                "packages": "sl"
+            }
+        }
+    },
     "test_apt_emptypackages_ubuntu": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
@@ -108,6 +117,15 @@
                 "packages": "sl cowsay",
                 "upgradePackages": true,
                 "deleteCache": true
+            }
+        }
+    },
+    "test_system_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager": {
+                "manager": "system",
+                "packages": "sl"
             }
         }
     },
