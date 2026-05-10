@@ -3,8 +3,7 @@
 set -eu
 
 . ./dev-container-features-test-lib
-. ./common.sh
 
-check "sl installed" package_installed sl
+# Only check that no error occur
 
 reportResults

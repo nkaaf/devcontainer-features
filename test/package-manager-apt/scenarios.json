@@ -1,0 +1,146 @@
+{
+    "test_apt_emptypackages_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "packages": ""
+            }
+        }
+    },
+    "test_apt_single_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "packages": "sl"
+            }
+        }
+    },
+    "test_apt_multi_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "packages": "sl cowsay"
+            }
+        }
+    },
+    "test_apt_delete_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "deleteCache": true
+            }
+        }
+    },
+    "test_apt_get_emptypackages_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "packages": ""
+            }
+        }
+    },
+    "test_apt_get_single_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "packages": "sl"
+            }
+        }
+    },
+    "test_apt_get_multi_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "packages": "sl cowsay"
+            }
+        }
+    },
+    "test_apt_get_delete_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "deleteCache": true
+            }
+        }
+    },
+    "test_apt_emptypackages_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "packages": ""
+            }
+        }
+    },
+    "test_apt_single_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "packages": "sl"
+            }
+        }
+    },
+    "test_apt_multi_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "packages": "sl cowsay"
+            }
+        }
+    },
+    "test_apt_delete_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt",
+                "deleteCache": true
+            }
+        }
+    },
+    "test_apt_get_emptypackages_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "packages": ""
+            }
+        }
+    },
+    "test_apt_get_single_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "packages": "sl"
+            }
+        }
+    },
+    "test_apt_get_multi_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "packages": "sl cowsay"
+            }
+        }
+    },
+    "test_apt_get_delete_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "package-manager-apt": {
+                "manager": "apt-get",
+                "deleteCache": true
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "id": "package-manager-apt",
+    "version": "0.1.0",
+    "name": "Package Manager - apt",
+    "description": "Interacting with apt-like package managers.",
+    "keywords": [
+        "package",
+        "manager",
+        "apt",
+        "apt-get"
+    ],
+    "privileged": false,
+    "init": false,
+    "options": {
+        "manager":{
+            "type": "string",
+            "enum": [
+                "apt",
+                "apt-get"
+            ],
+            "default": "apt-get",
+            "description": "Package manager that is apt-like."
+        },
+        "packages":{
+            "type": "string",
+            "default": "",
+            "description": "Space-seperated string of packages to install, versions constraints can also be applied."
+        },
+        "deleteCache":{
+            "type": "boolean",
+            "default": false,
+            "description": "Delete cached files."
+        },
+        "upgradePackages":{
+            "type": "boolean",
+            "default": false,
+            "description": "Upgrade installed packages."
+        }
+    }
+}

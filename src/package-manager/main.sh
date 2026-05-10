@@ -24,18 +24,6 @@ exec_apt_like() {
     fi
 }
 
-exec_tlmgr() {
-    if [ "$PACKAGES" != "" ]; then
-        tlmgr install $PACKAGES
-    fi
-    if [ "$UPGRADEPACKAGES" = "true" ]; then
-        tlmgr update --self --all
-    fi
-    if [ "$DELETECACHE" = "true" ]; then
-        echo "The option 'deleteCache' is not available for 'tlmgr' and will result in no action."
-    fi
-}
-
 case "$MANAGER" in
     apt)
         exec_apt_like apt
@@ -43,12 +31,8 @@ case "$MANAGER" in
     apt-get)
         exec_apt_like apt-get
         ;;
-    tlmgr)
-        exec_tlmgr
-        break
-        ;;
     *)
-        echo "Unknown package manager: '$MANAGER'"
+        echo "Internal error: Unknown package manager: '$MANAGER'"
         exit 1
         ;;
 esac

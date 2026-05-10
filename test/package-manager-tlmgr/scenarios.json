@@ -1,0 +1,39 @@
+{
+
+    "test_package_empty": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/nkaaf/devcontainer-features/latex-texlive": {
+                "year": "2026",
+                "scheme": "minimal"
+            },
+            "package-manager-tlmgr": {
+                "packages": ""
+            }
+        }
+    },
+    "test_package_single": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/nkaaf/devcontainer-features/latex-texlive": {
+                "year": "2026",
+                "scheme": "minimal"
+            },
+            "package-manager-tlmgr": {
+                "packages": "xifthen"
+            }
+        }
+    },
+    "test_package_multi": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/nkaaf/devcontainer-features/latex-texlive": {
+                "year": "2026",
+                "scheme": "minimal"
+            },
+            "package-manager-tlmgr": {
+                "packages": "xifthen ifmtarg"
+            }
+        }
+    }
+}
