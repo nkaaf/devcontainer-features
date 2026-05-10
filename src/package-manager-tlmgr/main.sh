@@ -16,7 +16,7 @@ if [ "$PACKAGES" != "" ]; then
         fi
     done
 
-    installation_path=$(dirname $(realpath tlmgr))
+    installation_path=$(dirname $(realpath $(which tlmgr)))
     for f in "$installation_path"/*; do
         [ -f "$f" ] || continue
         name=$(basename "$f")
