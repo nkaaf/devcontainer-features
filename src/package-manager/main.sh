@@ -32,7 +32,7 @@ case "$MANAGER" in
         exec_apt_like apt-get
         ;;
     *)
-        echo "Unknown package manager: '$MANAGER'"
+        echo "Internal error: Unknown package manager: '$MANAGER'"
         exit 1
         ;;
 esac

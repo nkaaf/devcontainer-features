@@ -1,0 +1,30 @@
+{
+    "id": "package-manager-tlmgr",
+    "version": "0.1.0",
+    "name": "Package Manager - tlmgr",
+    "description": "Interacting with tlmgr, the TeX Live package manager.",
+    "keywords": [
+        "package",
+        "manager",
+        "tlmgr",
+        "latex",
+        "texlive"
+    ],
+    "privileged": false,
+    "init": false,
+    "options": {
+        "packages":{
+            "type": "string",
+            "default": "",
+            "description": "Space-seperated string of packages to install."
+        },
+        "upgradePackages":{
+            "type": "boolean",
+            "default": false,
+            "description": "Upgrade installed packages, this also upgrades 'tlmgr' automatically."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/nkaaf/devcontainer-features/latex-texlive"
+    ]
+}

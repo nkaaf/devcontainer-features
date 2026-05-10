@@ -1,27 +1,15 @@
 {
     "id": "package-manager",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "name": "Package Manager",
-    "description": "Interacting with package managers.",
+    "description": "Interacting with system package managers.",
     "keywords": [
         "package",
-        "manager",
-        "apt",
-        "apt-get"
+        "manager"
     ],
     "privileged": false,
     "init": false,
     "options": {
-        "manager": {
-            "type": "string",
-            "enum": [
-                "apt",
-                "apt-get",
-                "system"
-            ],
-            "default": "system",
-            "description": "Package Manager"
-        },
         "packages":{
             "type": "string",
             "default": "",

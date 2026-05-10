@@ -5,7 +5,6 @@ set -eu
 . ./dev-container-features-test-lib
 . ./common.sh
 
-check "Cache deleted" cache_deleted
-check "Upgrades not existing" upgrades_not_existing
+check "Cache not deleted" apt_like_cache_exists
 
 reportResults
