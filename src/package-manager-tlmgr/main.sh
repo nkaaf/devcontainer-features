@@ -15,6 +15,13 @@ if [ "$PACKAGES" != "" ]; then
             exit 1
         fi
     done
+
+    installation_path=$(dirname $(realpath tlmgr))
+    for f in "$installation_path"/*; do
+        [ -f "$f" ] || continue
+        name=$(basename "$f")
+        ln -sf "$f" "/usr/local/bin/$name"
+    done
 fi
 if [ "$UPGRADEPACKAGES" = "true" ]; then
     tlmgr update --self --all
