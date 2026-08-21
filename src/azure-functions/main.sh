@@ -1,6 +1,7 @@
 . /etc/os-release
 
 # Microsoft GPG Repository Signing Key: https://learn.microsoft.com/en-us/linux/packages#how-to-use-the-gpg-repository-signing-key
+# Installation: https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools
 
 case "$ID" in
     ubuntu)
