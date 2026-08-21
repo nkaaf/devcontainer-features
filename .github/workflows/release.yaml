@@ -1,4 +1,3 @@
-# https://github.com/devcontainers/feature-starter/blob/67a45f05bb47843fef96f53ab09eab04680f6d95/.github/workflows/release.yaml
 name: "Release dev container features & Generate Documentation"
 on:
   workflow_dispatch:
