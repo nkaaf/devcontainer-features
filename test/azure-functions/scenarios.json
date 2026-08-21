@@ -1,0 +1,14 @@
+{
+    "test_ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu24.04",
+        "features": {
+            "azure-functions": { }
+        }
+    },
+    "test_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian13",
+        "features": {
+            "azure-functions": { }
+        }
+    }
+}

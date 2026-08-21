@@ -1,0 +1,29 @@
+{
+    "id": "azure-functions",
+    "version": "0.1.0",
+    "name": "Azure Functions Development Tools",
+    "description": "Installs tools that are recommended for the development of Azure Function Apps.",
+    "keywords": [
+        "azure",
+        "function",
+        "app",
+        "development"
+    ],
+    "privileged": false,
+    "init": false,
+    "dependsOn": {
+        "ghcr.io/nkaaf/devcontainer-features/package-manager:2": {
+            "packages": "curl gpg ca-certificates",
+            "deleteCache": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-azurefunctions",
+                "ms-azuretools.vscode-azure-functions-web",
+                "ms-azuretools.vscode-azure-functions-remote-web"
+            ]
+        }
+    }
+}
