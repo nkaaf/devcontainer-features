@@ -1,28 +1,11 @@
-// Modified: https://github.com/devcontainers/feature-starter/blob/67a45f05bb47843fef96f53ab09eab04680f6d95/.devcontainer/devcontainer.json
 {
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:4-24-trixie",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "json.schemas": [
-                    {
-                        "fileMatch": [
-                            "*/devcontainer-feature.json"
-                        ],
-                        "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-                    }
-                ]
-            },
-            "extensions": [
-                "mads-hartmann.bash-ide-vscode"
-            ]
-        }
-    },
+    "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
+    "name": "devcontainer",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:5.0.2-26-trixie",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "ghcr.io/devcontainers/features/docker-in-docker:4": {
             "moby": false
         }
     },
-    "remoteUser": "node",
-    "updateContentCommand": "npm install -g @devcontainers/cli"
+    "postAttachCommand": ".devcontainer/postAttach.sh"
 }
