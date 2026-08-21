@@ -11,6 +11,9 @@
     ],
     "privileged": false,
     "init": false,
+    "containerEnv": {
+        "FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT": "true"
+    },
     "dependsOn": {
         "ghcr.io/nkaaf/devcontainer-features/package-manager:2": {
             "packages": "curl gpg ca-certificates",
