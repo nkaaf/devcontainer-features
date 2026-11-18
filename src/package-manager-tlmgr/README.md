@@ -17,6 +17,7 @@ Interacting with tlmgr, the TeX Live package manager.
 |-----|-----|-----|-----|
 | packages | Space-seperated string of packages to install. | string | - |
 | upgradePackages | Upgrade installed packages, this also upgrades 'tlmgr' automatically. | boolean | false |
+| mirror | Mirror to use for tlmgr. | string | - |
 
 
 
