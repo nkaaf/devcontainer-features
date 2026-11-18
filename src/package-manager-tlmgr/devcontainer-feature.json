@@ -1,6 +1,6 @@
 {
     "id": "package-manager-tlmgr",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "name": "Package Manager - tlmgr",
     "description": "Interacting with tlmgr, the TeX Live package manager.",
     "keywords": [
@@ -22,6 +22,11 @@
             "type": "boolean",
             "default": false,
             "description": "Upgrade installed packages, this also upgrades 'tlmgr' automatically."
+        },
+        "mirror":{
+            "type": "string",
+            "default": "",
+            "description": "Mirror to use for tlmgr."
         }
     },
     "installsAfter": [
