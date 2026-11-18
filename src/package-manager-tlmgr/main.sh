@@ -7,6 +7,9 @@ tlmgr_package_installed() {
     [ "$installed" = "Yes" ]
 }
 
+if [ "$MIRROR" != "" ]; then
+    tlmgr option repository "$MIRROR" 
+fi
 if [ "$PACKAGES" != "" ]; then
     tlmgr install $PACKAGES
     for package in $PACKAGES; do
